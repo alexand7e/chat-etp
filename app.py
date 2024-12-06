@@ -42,9 +42,6 @@ def load_system_instruction(filepath):
         st.error(f"Erro ao carregar instruções: {e}")
         return ""
 
-import os
-import streamlit as st
-from docx import Document
 
 def main():
     st.title("Relatório ETP | Governo do Estado do Piauí")
@@ -69,6 +66,8 @@ def main():
                 st.session_state.active_chat = "Novo Chat"
             if 'report_generated' not in st.session_state:
                 st.session_state.report_generated = False
+            if 'items_list' not in st.session_state:
+                st.session_state.items_list = []
 
             # Exibe opções de chat na barra lateral
             chat_names = list(st.session_state.chat_sessions.keys()) + ["Novo Chat"]
@@ -90,28 +89,51 @@ def main():
 
             chat_session = st.session_state.chat_sessions[active_chat]
 
-            # Formulário retrátil
+            # Formulário retrátil para adicionar itens
             with st.expander("Formulário para Relatório", expanded=not st.session_state.report_generated):
+                # Parte do formulário principal
                 with st.form("formulario_relatorio"):
-                    nome_objeto = st.text_input("Nome do Objeto")
-                    descricao_itens = st.text_area("Descrição dos Itens")
-                    quantitativo_itens = st.number_input("Quantitativo dos Itens", min_value=0)
-                    unidade_medida = st.text_input("Unidade de Medida")
                     setor_requisitante = st.text_input("Setor Requisitante")
                     numero_processo = st.text_input("Número do Processo")
                     informacoes_adicionais = st.text_area("Informações Adicionais")
+
                     submit_button = st.form_submit_button("Gerar Relatório")
 
+                # Adicionar itens fora do formulário
+                st.subheader("Adicionar Itens")
+                col1, col2, col3 = st.columns(3)
+                with col1:
+                    item_nome = st.text_input("Item", key="item_nome")
+                with col2:
+                    item_quantidade = st.number_input("Quantidade", min_value=1, key="item_quantidade")
+                with col3:
+                    item_unidade = st.text_input("Unidade de Medida", key="item_unidade")
+
+                if st.button("Adicionar Item"):
+                    st.session_state.items_list.append({
+                        "nome": item_nome,
+                        "quantidade": item_quantidade,
+                        "unidade": item_unidade
+                    })
+                    st.success(f"Item '{item_nome}' adicionado com sucesso!")
+
+                # Mostrar itens adicionados
+                if st.session_state.items_list:
+                    st.subheader("Itens Adicionados")
+                    for idx, item in enumerate(st.session_state.items_list):
+                        st.write(f"{idx + 1}. {item['nome']} - {item['quantidade']} {item['unidade']}")
+
                 if submit_button:
-                    # Primeira mensagem para o modelo
+                    # Gerar relatório inicial
+                    itens_texto = "\n".join(
+                        [f"- {item['nome']}: {item['quantidade']} {item['unidade']}" for item in st.session_state.items_list]
+                    )
                     initial_message = f"""
-                    Nome do Objeto: {nome_objeto}
-                    Descrição dos Itens: {descricao_itens}
-                    Quantitativo dos Itens: {quantitativo_itens}
-                    Unidade de Medida: {unidade_medida}
                     Setor Requisitante: {setor_requisitante}
                     Número do Processo: {numero_processo}
                     Informações Adicionais: {informacoes_adicionais}
+                    Itens:
+                    {itens_texto}
                     """
                     try:
                         with st.spinner("Gerando a primeira versão do relatório..."):
@@ -133,7 +155,7 @@ def main():
                             st.download_button(
                                 label="Baixar Documento Word",
                                 data=file,
-                                file_name=os.path.join(os.path.dirname(__file__), "relatórios", f"{active_chat}.docx"),
+                                file_name=f"{active_chat}.docx",
                                 mime="application/vnd.openxmlformats-officedocument.wordprocessingml.document"
                             )
                     except Exception as e:
