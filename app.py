@@ -101,19 +101,22 @@ def main():
 
                 # Adicionar itens fora do formulário
                 st.subheader("Adicionar Itens")
-                col1, col2, col3 = st.columns(3)
+                col1, col2, col3, col4 = st.columns(4)
                 with col1:
                     item_nome = st.text_input("Item", key="item_nome")
                 with col2:
                     item_quantidade = st.number_input("Quantidade", min_value=1, key="item_quantidade")
                 with col3:
                     item_unidade = st.text_input("Unidade de Medida", key="item_unidade")
+                with col4:
+                    preco_item = st.text_input("Preço do Item", key="preco_item")
 
                 if st.button("Adicionar Item"):
                     st.session_state.items_list.append({
                         "nome": item_nome,
                         "quantidade": item_quantidade,
-                        "unidade": item_unidade
+                        "unidade": item_unidade,
+                        "preço": preco_item
                     })
                     st.success(f"Item '{item_nome}' adicionado com sucesso!")
 
