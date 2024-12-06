@@ -1,0 +1,63 @@
+**Criação do Estudo Técnico Preliminar: Instruções Detalhadas**
+
+Com base nos tópicos abaixo, elabore um **Estudo Técnico Preliminar** com foco no objeto solicitado. O desenvolvimento deve seguir as diretrizes a seguir, atendendo a cada tópico com clareza e completude:
+
+### Informações Essenciais sobre o Objeto
+- **Nome do Objeto**: Forneça o nome oficial do objeto da contratação.
+- **Descrição dos Itens**: Descreva detalhadamente cada item necessário.
+- **Quantitativo dos Itens**: Indique o número exato de itens requeridos.
+- **Unidade de Medida**: Informe as unidades de medida para cada item.
+- **Setor Requisitante**: Identifique o setor responsável pelo pedido.
+- **Número do Processo**: Informe o número de referência do processo.
+- **Informações adicionais**: Informações a mais para a criação do relatório.
+
+**Observação**: Caso o valor dos itens não seja informado, omita o tópico "Estimativa do Valor da Contratação" no relatório final.
+
+---
+
+### Desenvolvimento dos Tópicos
+1. **Informações Básicas**:
+   - Inclua detalhes como o número do processo e a área requisitante.
+
+2. **Descrição da Necessidade da Contratação**:
+   - Explique a necessidade da contratação com base no problema identificado, alinhando-o ao interesse público. Desenvolva este tópico em pelo menos 5 parágrafos, com 1.000 palavras.
+
+3. **Levantamento de Mercado**:
+   - Realize uma análise do mercado fornecedor, incluindo:
+     - Segmentos de mercado relevantes;
+     - Principais fornecedores;
+     - Experiências de fornecedores com órgãos públicos (se aplicável);
+     - Representatividade das contratações similares no mercado.
+   - Descreva as opções analisadas e justifique tecnicamente a escolha da solução. Use pelo menos 5 parágrafos, com 1.000 palavras.
+
+4. **Descrição da Solução Como um Todo**:
+   - Apresente a solução proposta, incluindo requisitos técnicos, manutenção e assistência técnica (quando aplicável). Desenvolva este tópico em 5 parágrafos, com 1.000 palavras.
+
+5. **Estimativa das Quantidades a Serem Contratadas**:
+   - Detalhe o quantitativo de itens e serviços estimados, com base em cálculos e metodologias justificadas. Utilize 5 parágrafos, com 1.000 palavras, e adicione uma tabela organizada.
+
+6. **Justificativa para o Parcelamento ou Não da Solução**:
+   - Forneça uma análise das razões para dividir ou não a contratação, considerando aspectos técnicos e econômicos. Escreva em pelo menos 5 parágrafos, com 1.000 palavras.
+
+7. **Contratações Correlatas e/ou Interdependentes**:
+   - Identifique e descreva possíveis interdependências com outras contratações, abordando suas implicações. Desenvolva este tópico com 5 parágrafos e 1.000 palavras.
+
+8. **Resultados/Benefícios Esperados**:
+   - Apresente os resultados almejados em termos de economicidade e melhor aproveitamento de recursos. Estruture em 5 parágrafos, com 1.000 palavras.
+
+9. **Providências a Serem Adotadas**:
+   - Liste as ações necessárias antes da celebração do contrato, como adaptações no ambiente, obtenção de licenças ou capacitação de equipes. Utilize 5 parágrafos, com 1.000 palavras.
+
+10. **Possíveis Impactos Ambientais (se aplicável)**:
+    - Detalhe os impactos ambientais e as medidas mitigadoras, incluindo práticas de sustentabilidade e logística reversa. Estruture em 5 parágrafos, com 1.000 palavras.
+
+---
+
+### Declaração de Viabilidade
+Conclua o estudo com uma declaração afirmando a viabilidade técnica da contratação, de acordo com os elementos apresentados.
+
+**Assinatura Eletrônica**: Inclua a assinatura do(s) responsável(is) pelo estudo e pela equipe de planejamento.
+
+---
+
+**Nota Final**: Mantenha uma linguagem clara, técnica e objetiva. Caso precise de mais informações ou esclarecimentos, não hesite em solicitar. Boa sorte no desenvolvimento deste estudo técnico!
